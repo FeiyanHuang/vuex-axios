@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>示范网页</h1>
+    <!-- <h1>请等待3秒！</h1>
+    <script>
+        // test1
+        setTimeout("alert('对不起，要你久候')", 3000);
+    </script> -->
+
+
+    <!-- <script>
+        // test2
+        function clearWord(){
+            console.log('here2')
+            window.status = ""
+            document.getElementById('inputVal').value = ''
+        }
+    </script> 
+    <form>
+        <input type="button" id="inputVal" value="在状态列显示文字" onclick="console.log('here'),window.status='hello',setTimeout('clearWord()', 3000)">
+    </form> -->
+
+
+    <!-- <form name="fm">
+        <input type="text" name="displayBox" value="0" size="4">
+    </form>
+    <script>
+    // 不断重复执行setTimeout
+        x = 0
+        function countSecond() {
+            x = x + 1
+            document.fm.displayBox.value = x
+            setTimeout("countSecond()", 1000)
+        }
+        countSecond()
+    </script> -->
+
+
+    <!-- <form name="fm">
+        <input type="text" name="displayBox" value="0" size="4">
+    </form>
+    <script>
+    // 有限重复执行setTimeout
+        x = 0
+        function countSecond() {
+            if (x<20) {
+                x = x + 1
+                document.fm.displayBox.value = x
+                setTimeout("countSecond()", 1000)   
+            }
+        }
+        countSecond()
+    </script> -->
+
+
+    <table>
+        <tr>
+            <td>你在本网页的连线时间是：</td>
+            <td>
+                <form name="displayMin">
+                    <input type="text" name="displayBox" value="0" size="4">
+                </form>分
+            </td>
+            <td>
+                <form name="displaySec">
+                    <input type="text" name="displayBox" value="0" size="4">
+                </form>秒
+            </td>
+        </tr>
+        <tr>
+            <input type="button" value="暂停" onclick="toggleFlag()">
+        </tr>
+    </table>
+    <script>
+    // 不断重复执行setTimeout
+        x = 0
+        y = -1
+        flag = true
+        // function countMin() {
+        //     if (flag) {
+        //         y = y + 1
+        //         document.displayMin.displayBox.value = y
+        //         setTimeout("countMin()", 60000)
+        //     }
+        // }
+        function countSec() {
+            if (flag) {
+                x = x + 1
+                z = x % 60
+                document.displaySec.displayBox.value = z
+                if (z === 1) {
+                    y = y + 1
+                    document.displayMin.displayBox.value = y
+                }
+                setTimeout("countSec()", 1000)
+            }
+        }
+        function toggleFlag () {
+            flag = !flag
+            if (flag) {
+                // countMin()
+                countSec()
+            }
+        }
+        if (flag) {
+            // countMin()
+            countSec()
+        }
+    </script>
+</body>
+</html>
